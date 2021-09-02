@@ -13,15 +13,7 @@ public class Exercise003 {
             "Chocolate",
             "Mango Sorbet"
     };
-
-//    List<String> iceCreamFlavoursList = Arrays.asList(
-//            "Pistachio",
-//            "Raspberry Ripple",
-//            "Vanilla",
-//            "Mint Chocolate Chip",
-//            "Chocolate",
-//            "Mango Sorbet");
-
+    
     List<String> iceCreamFlavoursList = Arrays.asList(iceCreamFlavoursArray);
 
     int getIceCreamCode(String iceCreamFlavour) {
