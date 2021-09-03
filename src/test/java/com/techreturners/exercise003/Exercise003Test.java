@@ -1,9 +1,13 @@
 package com.techreturners.exercise003;
 
+import org.hamcrest.Matchers;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertArrayEquals;
+import java.util.Arrays;
+import java.util.List;
+
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertEquals;
 
 public class Exercise003Test {
@@ -42,13 +46,22 @@ public class Exercise003Test {
     @Test
     public void checkPickMultipleIceCreamFlavours() {
 
-        String[] expected = { "Pistachio", "Raspberry Ripple", "Vanilla", "Mint Chocolate Chip", "Chocolate", "Mango Sorbet" };
+//        String[] expected = { "Pistachio", "Raspberry Ripple", "Vanilla", "Mint Chocolate Chip", "Chocolate", "Mango Sorbet" };
 
         // deprecated
 //        assertEquals(expected, ex003.iceCreamFlavours());
 
         // Use instead
-        assertArrayEquals(expected, ex003.iceCreamFlavours());
+        List<String> expected = Arrays.asList(
+                "Pistachio",
+                "Raspberry Ripple",
+                "Vanilla",
+                "Mint Chocolate Chip",
+                "Chocolate",
+                "Mango Sorbet");
+
+        assertThat(expected, Matchers.containsInAnyOrder(ex003.iceCreamFlavours().toArray()));
+
     }
 
 }

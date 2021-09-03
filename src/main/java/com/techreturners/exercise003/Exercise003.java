@@ -1,38 +1,34 @@
 package com.techreturners.exercise003;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 public class Exercise003 {
 
-    String[] iceCreamFlavoursArray = {
-            "Pistachio",
-            "Raspberry Ripple",
-            "Vanilla",
-            "Mint Chocolate Chip",
-            "Chocolate",
-            "Mango Sorbet"
-    };
-    
-    List<String> iceCreamFlavoursList = Arrays.asList(iceCreamFlavoursArray);
+    Map<String, Integer> iceCreamFlavoursMap = Map.of(
+            "Pistachio", 0,
+            "Raspberry Ripple", 1,
+            "Vanilla", 2,
+            "Mint Chocolate Chip", 3,
+            "Chocolate", 4,
+            "Mango Sorbet", 5);
 
     int getIceCreamCode(String iceCreamFlavour) {
 
-        int iceCreamCode = iceCreamFlavoursList.indexOf(iceCreamFlavour);
+        Integer iceCreamCode = iceCreamFlavoursMap.get(iceCreamFlavour);
 
-        if (iceCreamCode == -1) {
-            throw new UnsupportedOperationException("Ice cream flavour not found");
+        if (iceCreamCode == null) {
+            throw new NullPointerException("Ice cream flavour not found");
         } else {
             return iceCreamCode;
         }
     }
 
-    String[] iceCreamFlavours() {
-        if (iceCreamFlavoursArray.length > 0) {
-            return iceCreamFlavoursArray;
-        } else {
-            throw new UnsupportedOperationException(("No Ice cream flavours found"));
-        }
+    
+    List<String> iceCreamFlavours() {
+        return new ArrayList<>(iceCreamFlavoursMap.keySet());
     }
 
 }
