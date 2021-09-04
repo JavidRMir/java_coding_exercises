@@ -1,6 +1,5 @@
 package com.techreturners.exercise004;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 import java.time.LocalDate;
@@ -20,7 +19,6 @@ public class Exercise004Test {
         assertEquals(expected, ex004.getDateTime());
     }
 
-    @Ignore("You can remove this @ignore annotation to run the test")
     @Test
     public void checkGetDateTimeWhenBothDateAndTimeIsSpecified() {
 
@@ -30,7 +28,6 @@ public class Exercise004Test {
         assertEquals(expected, ex004.getDateTime());
     }
 
-    @Ignore("You can remove this @ignore annotation to run the test")
     @Test
     public void checkGetDateTimeWhenBothDateAndTimeIsSpecifiedWithDayRollOver() {
 
@@ -38,6 +35,19 @@ public class Exercise004Test {
         LocalDateTime expected = LocalDateTime.of(2052, Month.OCTOBER, 03, 1, 46, 39);
 
         assertEquals(expected, ex004.getDateTime());
+    }
+
+    @Test
+    public void checkGetDateTimeDifference() {
+
+        Exercise004 ex004 = new Exercise004(LocalDateTime.of(2021, Month.JANUARY, 24, 23, 59, 59, 0));
+        LocalDateTime expected = LocalDateTime.of(2017, Month.NOVEMBER, 24, 23, 29, 59);
+
+        assertEquals(expected, ex004.getDateTimeDifference(
+                3, 1,
+                4, 2,
+                0, 30,
+                0, 0));
     }
 
 }

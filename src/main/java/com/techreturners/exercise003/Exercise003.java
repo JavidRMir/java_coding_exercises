@@ -26,7 +26,7 @@ public class Exercise003 {
         }
     }
 
-    
+
     List<String> iceCreamFlavours() {
         return new ArrayList<>(iceCreamFlavoursMap.keySet());
     }
