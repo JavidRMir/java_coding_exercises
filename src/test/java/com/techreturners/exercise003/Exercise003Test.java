@@ -51,7 +51,7 @@ public class Exercise003Test {
         // deprecated
 //        assertEquals(expected, ex003.iceCreamFlavours());
 
-        // Use instead
+        // Use instead of String[], assertThat takes list as an iterative and not native array
         List<String> expected = Arrays.asList(
                 "Pistachio",
                 "Raspberry Ripple",
